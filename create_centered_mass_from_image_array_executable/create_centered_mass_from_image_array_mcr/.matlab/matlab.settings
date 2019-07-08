@@ -112,13 +112,13 @@
                     <value><![CDATA[/home/rja20/cluster_code]]></value>
                     <value><![CDATA[/home/rja20]]></value>
                     <value><![CDATA[/home/rja20/MR_compressed_sensing_HPC_recon]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/shared/civm_matlab_common_utils]]></value>
                     <value><![CDATA[/home]]></value>
                     <value><![CDATA[/]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/shared/civm_matlab_common_utils]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/shared]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev]]></value>
-                    <value><![CDATA[/cm/shared]]></value>
                     <value><![CDATA[/cm]]></value>
+                    <value><![CDATA[/cm/shared]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/shared]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/shared/pipeline_utilities]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/recon]]></value>
                     <value><![CDATA[/civmnas4/rja20/SingleSegmentation_15gaj36_xmas2015rat_symmetric_proto_cropped_S66971-work/dwi/fa/faMDT_NoNameYet_n1/stats_by_region/labels/pre_rigid_native_space/xmas2015rat_symmetric_cropped_20190118/stats/individual_label_statistics]]></value>
@@ -169,10 +169,10 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[294]]></value>
-                        <value><![CDATA[66]]></value>
-                        <value><![CDATA[78]]></value>
-                        <value><![CDATA[144]]></value>
+                        <value><![CDATA[192]]></value>
+                        <value><![CDATA[45]]></value>
+                        <value><![CDATA[69]]></value>
+                        <value><![CDATA[130]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                     </string>
