@@ -31,7 +31,7 @@ else
   eval "\"${exe_dir}/write_individual_stats_exec_v2\"" $args
   ret_code=$?
 
-  if [[ -e ./java.opts ]]; then rm ./java_opts ; fi
+  if [[ -e ./java.opts ]]; then rm ./java.opts ; fi
 
 fi
 exit ${ret_code}

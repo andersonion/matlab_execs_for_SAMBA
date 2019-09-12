@@ -2,6 +2,7 @@
 <settings name="matlab" xmlns="urn:mathworks.matlab.settings" xsi:schemaLocation="urn:mathworks.matlab.settings settings.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <key name="DeleteFilesPermanently">
         <bool>
+            <value>1</value>
         </bool>
     </key>
     <key name="G11nLanguagePref">
@@ -108,26 +109,26 @@
             </key>
             <key name="History">
                 <string minArraySize="0" maxArraySize="500">
+                    <value><![CDATA[/home/rja20/MR_compressed_sensing_HPC_recon]]></value>
+                    <value><![CDATA[/home/rja20]]></value>
+                    <value><![CDATA[/home/rja20/cluster_code]]></value>
+                    <value><![CDATA[/home]]></value>
+                    <value><![CDATA[/]]></value>
+                    <value><![CDATA[/home/rja20/Mail]]></value>
+                    <value><![CDATA[/cm]]></value>
+                    <value><![CDATA[/cm/shared]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/shared]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/shared/civm_matlab_common_utils]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/shared/pipeline_utilities]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/recon]]></value>
+                    <value><![CDATA[/civmnas4/rja20/SingleSegmentation_15gaj36_xmas2015rat_symmetric_proto_cropped_S66971-work/dwi/fa/faMDT_NoNameYet_n1/stats_by_region/labels/pre_rigid_native_space/xmas2015rat_symmetric_cropped_20190118/stats/individual_label_statistics]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/analysis/SAMBA/label_stats/fdr_bh]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/analysis/SAMBA/label_stats]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/analysis/SAMBA]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/analysis]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/shared]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/shared/civm_matlab_common_utils]]></value>
-                    <value><![CDATA[/cm/shared]]></value>
-                    <value><![CDATA[/home/rja20/cluster_code]]></value>
-                    <value><![CDATA[/home/rja20]]></value>
-                    <value><![CDATA[/home]]></value>
-                    <value><![CDATA[/]]></value>
-                    <value><![CDATA[/cm]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/shared/pipeline_utilities]]></value>
                     <value><![CDATA[/usr]]></value>
                     <value><![CDATA[/usr/lib]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/matlab_execs/bvec_transform_executable/20170607_1100]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/matlab_execs/bvec_transform_executable]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/matlab_execs]]></value>
-                    <value><![CDATA[/clusterspace]]></value>
                 </string>
             </key>
             <key name="HistorySize">
@@ -168,10 +169,10 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[46]]></value>
-                        <value><![CDATA[34]]></value>
-                        <value><![CDATA[0]]></value>
-                        <value><![CDATA[74]]></value>
+                        <value><![CDATA[56]]></value>
+                        <value><![CDATA[41]]></value>
+                        <value><![CDATA[47]]></value>
+                        <value><![CDATA[93]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                     </string>
@@ -205,6 +206,7 @@
                         <value><![CDATA[icon]]></value>
                         <value><![CDATA[name]]></value>
                         <value><![CDATA[status]]></value>
+                        <value><![CDATA[size]]></value>
                         <value><![CDATA[modified]]></value>
                     </string>
                 </key>
@@ -391,7 +393,7 @@
         </key>
         <key name="LastFolderPath">
             <string>
-                <value><![CDATA[/cm/shared/workstation_code_dev/shared/pipeline_utilities]]></value>
+                <value><![CDATA[/home/rja20/MR_compressed_sensing_HPC_recon]]></value>
             </string>
         </key>
     </settings>
