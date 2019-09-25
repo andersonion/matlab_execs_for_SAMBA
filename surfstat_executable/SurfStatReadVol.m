@@ -1,4 +1,4 @@
-function [data,vol] = SurfStatReadVol(filenames,mask,step,dirname,maxmem);
+function [data,vol] = SurfStatReadVol(filenames,mask,step,dirname,maxmem)
 
 %Reads volumetric files in MINC, ANALYZE, NIFTI or AFNI format. 
 % 
@@ -38,7 +38,7 @@ function [data,vol] = SurfStatReadVol(filenames,mask,step,dirname,maxmem);
 % If n=1, data is double precision; 
 % if n>1, data is single precision.
 
-if isstr(filenames)
+if ischar(filenames)
     filenames={filenames};
 end
 
@@ -52,26 +52,33 @@ if nargin<5
 end
 maxmem=maxmem*2^20;
 
-d=SurfStatReadVol1(filenames{1,1},0,0);
+% BJA, 25 September 2019:
+% Adding CIVM's beautiful 'load_niigz' function
+% to support operating directly on gzipped nii's
+% without having to gunzip first
+
+d=SurfStatReadVol2(filenames{1,1},0,0);
+%d=SurfStatReadVol1(filenames{1,1},0,0);
+
 n=size(filenames,1);
-if length(d.dim)==3 | d.dim(4)==1
+if length(d.dim)==3 || d.dim(4)==1
     d.dim(4)=1;
     k=size(filenames,2);
 else
     k=d.dim(4);
     kk=size(filenames,2);
-    if kk>1 & k>1
+    if kk>1 && k>1
         error(['Can''t read k=' num2str(kk) '>1 files of 4D data, dims= ' num2str(d.dim)]);
     end
 end
 
-if nargin<2 | isempty(mask)
-    mask=logical(ones(d.dim(1:3)));
+if nargin<2 || isempty(mask)
+    mask= true(d.dim(1:3));
 end
 if length(size(mask))==2
     mask=reshape(mask,d.dim(1:3));
 end
-if nargin<3 | isempty(step)
+if nargin<3 || isempty(step)
     step=1;
 end
 if length(step)==1
@@ -137,7 +144,7 @@ isnum=(n*v*k*4<=maxmem);
 if isnum
     data=zeros(n,v,k,'single');
 else
-    if nargin<4 | isempty(dirname)
+    if nargin<4 || isempty(dirname)
         [PATHSTR,NAME,EXT]=fileparts(filenames{1});
         dirname=fullfile(PATHSTR,'SurfStat');
     end
@@ -155,14 +162,21 @@ else
     fid=fopen(Filename,'wb');
 end
 for i=1:n
-    if n>1 & rem(i,n10)==0
+    if n>1 && rem(i,n10)==0
         fprintf(1,'%s',[num2str(round(100*(1-i/n))) ' ']);
     end
     for j=1:k
         if d.dim(4)==1
-            d=SurfStatReadVol1(filenames{i,j},slices,1);
+            % BJA, 25 September 2019:
+            % Adding CIVM's beautiful 'load_niigz' function
+            % to support operating directly on gzipped nii's
+            % without having to gunzip first
+            d=SurfStatReadVol2(filenames{i,j},slices,1);
+            
+            %d=SurfStatReadVol1(filenames{i,j},slices,1);            
         else
-            d=SurfStatReadVol1(filenames{i},slices,j);
+            d=SurfStatReadVol2(filenames{i},slices,j);
+            %d=SurfStatReadVol1(filenames{i},slices,j);
         end
         data2=d.data(slicedlat)';
         data2(isnan(data2))=0;
