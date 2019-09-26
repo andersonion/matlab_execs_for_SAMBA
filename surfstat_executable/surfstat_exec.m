@@ -147,5 +147,5 @@ for direction = (0:1)
         saveas(h(i), [results_directory contrast '_figure_' num2str(i) suffix], 'fig');
     end
 end
-%exit % need to switch back to exit after debugging
+exit % need to switch back to exit after debugging
 end

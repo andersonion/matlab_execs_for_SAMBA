@@ -112,20 +112,20 @@
                     <value><![CDATA[/home/rja20/MR_compressed_sensing_HPC_recon]]></value>
                     <value><![CDATA[/home/rja20]]></value>
                     <value><![CDATA[/home/rja20/cluster_code]]></value>
-                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe]]></value>
-                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe/surfstat]]></value>
-                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis]]></value>
                     <value><![CDATA[/home/rja20/cluster_code/workstation_code]]></value>
+                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis]]></value>
+                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe]]></value>
                     <value><![CDATA[/home]]></value>
                     <value><![CDATA[/]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/shared/matlab_exec_lifecycle_manager]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/shared]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/matlab_execs]]></value>
-                    <value><![CDATA[/cm/shared]]></value>
                     <value><![CDATA[/cm]]></value>
-                    <value><![CDATA[/home/rja20/matlab_execs_for_SAMBA/write_individual_stats_executable]]></value>
+                    <value><![CDATA[/cm/shared]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/shared]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs_for_SAMBA]]></value>
+                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe/surfstat]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/shared/matlab_exec_lifecycle_manager]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/matlab_execs]]></value>
+                    <value><![CDATA[/home/rja20/matlab_execs_for_SAMBA/write_individual_stats_executable]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs_for_SAMBA/surfstat_executable]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/shared/pipeline_utilities]]></value>
                     <value><![CDATA[/home/rja20/Mail]]></value>
@@ -169,10 +169,10 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[221]]></value>
-                        <value><![CDATA[54]]></value>
-                        <value><![CDATA[94]]></value>
-                        <value><![CDATA[138]]></value>
+                        <value><![CDATA[188]]></value>
+                        <value><![CDATA[49]]></value>
+                        <value><![CDATA[130]]></value>
+                        <value><![CDATA[140]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                     </string>
