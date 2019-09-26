@@ -1,4 +1,4 @@
-function [] = surfstat_for_vbm_pipeline_exec(contrast,average_mask,inputs_directory,results_directory,group_1_name,group_2_name,group_1_filenames,group_2_filenames)
+function [] = surfstat_exec(contrast,average_mask,inputs_directory,results_directory,group_1_name,group_2_name,group_1_filenames,group_2_filenames)
 
 % clear all, close all, clc
 % test=0;
