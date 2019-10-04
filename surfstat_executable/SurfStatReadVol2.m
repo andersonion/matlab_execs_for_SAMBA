@@ -1,7 +1,7 @@
 function d = SurfStatReadVol2( file, Z, T );
-%file = '/home/rja20/test_centered_mass_3.nii.gz';
-%Z=0;
-%T=0;
+file = '/home/rja20/test_centered_mass_3.nii.gz';
+Z=0;
+T=0;
 %Reads a single volumetric file in MINC, ANALYZE, NIFTI or AFNI format. 
 % 
 % Usage: d = SurfStatReadVol1( file [, Z, T] ). 
@@ -703,7 +703,8 @@ function [d] = civm_load_nii_gz(file,Z,T)
        end
     end
     d.dim(1:dim(1))=dim((1:dim(1))+1);
-    
+    d.vox=zeros(1,3);
+    d.vox(1:dim(1))=d.pixdim((1:dim(1))+1);
     if d.qform_code>0;
         d.origin    = [d.qoffset_x d.qoffset_y d.qoffset_z];
     else
