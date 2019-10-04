@@ -1,7 +1,7 @@
 function d = SurfStatReadVol2( file, Z, T );
-file = '/home/rja20/test_centered_mass_3.nii.gz';
-Z=0;
-T=0;
+%file = '/home/rja20/test_centered_mass_3.nii.gz';
+%Z=0;
+%T=0;
 %Reads a single volumetric file in MINC, ANALYZE, NIFTI or AFNI format. 
 % 
 % Usage: d = SurfStatReadVol1( file [, Z, T] ). 
