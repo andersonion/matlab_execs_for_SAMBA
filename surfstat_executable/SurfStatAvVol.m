@@ -26,7 +26,7 @@ end
 n=size(filenames,1);
 
 if n==1
-    d=SurfStatReadVol1(filenames);
+    d=SurfStatReadVol2(filenames);
     data=d.data;
 else
     fprintf(1,'%s',[num2str(n) ' files to read, % remaining: 100 ']);
@@ -35,7 +35,7 @@ else
         if rem(i,n10)==0 
             fprintf(1,'%s',[num2str(round(100*(1-i/n))) ' ']);
         end
-        d=SurfStatReadVol1(filenames{i});
+        d=SurfStatReadVol2(filenames{i});
         if ~isnan(Nan)
             d.data(isnan(d.data))=Nan;
         end
