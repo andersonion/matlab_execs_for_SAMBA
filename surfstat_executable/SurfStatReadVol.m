@@ -57,7 +57,7 @@ maxmem=maxmem*2^20;
 % to support operating directly on gzipped nii's
 % without having to gunzip first
 
-d=SurfStatReadVol2(filenames{1,1},0,0);
+d=SurfStatReadVol3(filenames{1,1},0,0);
 %d=SurfStatReadVol1(filenames{1,1},0,0);
 
 n=size(filenames,1);
@@ -171,11 +171,11 @@ for i=1:n
             % Adding CIVM's beautiful 'load_niigz' function
             % to support operating directly on gzipped nii's
             % without having to gunzip first
-            d=SurfStatReadVol2(filenames{i,j},slices,1);
+            d=SurfStatReadVol3(filenames{i,j},slices,1);
             
             %d=SurfStatReadVol1(filenames{i,j},slices,1);            
         else
-            d=SurfStatReadVol2(filenames{i},slices,j);
+            d=SurfStatReadVol3(filenames{i},slices,j);
             %d=SurfStatReadVol1(filenames{i},slices,j);
         end
         data2=d.data(slicedlat)';
