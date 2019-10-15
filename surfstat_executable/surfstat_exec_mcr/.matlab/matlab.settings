@@ -111,8 +111,9 @@
                 <string minArraySize="0" maxArraySize="500">
                     <value><![CDATA[/home/rja20/MR_compressed_sensing_HPC_recon]]></value>
                     <value><![CDATA[/home/rja20]]></value>
-                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe]]></value>
                     <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe/surfstat]]></value>
+                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe/surfstat/@mfile]]></value>
+                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/shared/pipeline_utilities]]></value>
                     <value><![CDATA[/home/rja20/cluster_code]]></value>
                     <value><![CDATA[/home/rja20/cluster_code/workstation_code]]></value>
@@ -128,7 +129,6 @@
                     <value><![CDATA[/cm/shared/workstation_code_dev/matlab_execs]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs_for_SAMBA/write_individual_stats_executable]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs_for_SAMBA/surfstat_executable]]></value>
-                    <value><![CDATA[/home/rja20/Mail]]></value>
                 </string>
             </key>
             <key name="HistorySize">
@@ -169,10 +169,10 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[178]]></value>
-                        <value><![CDATA[49]]></value>
-                        <value><![CDATA[137]]></value>
-                        <value><![CDATA[143]]></value>
+                        <value><![CDATA[177]]></value>
+                        <value><![CDATA[50]]></value>
+                        <value><![CDATA[144]]></value>
+                        <value><![CDATA[136]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                     </string>
