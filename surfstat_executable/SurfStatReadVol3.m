@@ -48,6 +48,26 @@ if strcmp(file(1),'~')
    hp=getenv('HOME');
    file=[hp file];
 end
+
+
+if ~exist(file,'file')
+   
+   if strcmp(file(end-2:end),'.gz')
+       test_file = file;
+       test_file(end-2:end)=[];
+       if exist(test_file,'file')
+           file=test_file;
+       end
+   else
+       test_file = [ file '.gz' ];
+       if exist(test_file,'file')
+           file=test_file;
+       end
+   end
+    
+end
+
+
 [path,name,ext]=fileparts(file);
 
 % Commenting for now.
