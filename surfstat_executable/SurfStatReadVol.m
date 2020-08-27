@@ -178,7 +178,7 @@ for i=1:n
             d=SurfStatReadVol3(filenames{i},slices,j);
             %d=SurfStatReadVol1(filenames{i},slices,j);
         end
-        data2=d.data(slicedlat)';
+        data2=d.data(   slicedlat)';
         data2(isnan(data2))=0;
         if isnum
             data(i,:,j)=data2;
