@@ -111,13 +111,13 @@
                 <string minArraySize="0" maxArraySize="500">
                     <value><![CDATA[/home/rja20/cluster_code]]></value>
                     <value><![CDATA[/home/rja20]]></value>
+                    <value><![CDATA[/home]]></value>
+                    <value><![CDATA[/]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs_for_SAMBA]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs_for_SAMBA/surfstat_for_vbm_pipeline_executable]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs]]></value>
                     <value><![CDATA[/home/rja20/bj_matlab_common_utils]]></value>
                     <value><![CDATA[/home/rja20/backup_matlab_execs]]></value>
-                    <value><![CDATA[/home]]></value>
-                    <value><![CDATA[/]]></value>
                     <value><![CDATA[/cm]]></value>
                     <value><![CDATA[/cm/shared]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev]]></value>
@@ -169,10 +169,10 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[240]]></value>
-                        <value><![CDATA[50]]></value>
-                        <value><![CDATA[129]]></value>
-                        <value><![CDATA[138]]></value>
+                        <value><![CDATA[233]]></value>
+                        <value><![CDATA[53]]></value>
+                        <value><![CDATA[133]]></value>
+                        <value><![CDATA[141]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                     </string>
