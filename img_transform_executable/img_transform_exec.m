@@ -178,12 +178,14 @@ if ~isstruct(img)
         time_1=toc(n1t);
         n2t=tic;
         if ~exist(output_path,'file')
-            nii=load_nii(img);
+            % nii=load_nii(img); % Switched to untouch, 27 October 2020
+            nii=load_untouch_nii(img);
         else
-            nii.hdr=load_nii_hdr(img);
+            % nii.hdr=load_nii_hdr(img); % 27 October 2020
+            nii.hdr=load_untouch_nii_hdr(img);
         end
         time_2=toc(n2t);
-        warning(['Function load_niigz (runtime: ' num2str(time_1) ') failed with datatype: ' num2str(nii.hdr.dime.datatype) ' (perhaps because it currently doesn''t support RGB?). Used load_nii instead (runtime: ' num2str(time_2) ').']);
+        warning(['Function load_niigz (runtime: ' num2str(time_1) ') failed with datatype: ' num2str(nii.hdr.dime.datatype) ' (perhaps because it currently doesn''t support RGB?). Used load_untouch_nii instead (runtime: ' num2str(time_2) ').']);
     end
 else
     nii=img;img='NOPATH_DIRECT_IN_STRUCT_MODE';
@@ -346,11 +348,11 @@ end
 % 25 October 2020, BJA:
 % Code would break on anisotropic data and dimension swaps...fixing now
 pixdim_order=[(xpos+1) (ypos+1) (zpos+1)]; 
-
+new_pix_dims=nii.hdr.dime.pixdim(pixdim_order);
 
 %% make_nii/save_nii
 %newnii=make_nii(new,nii.hdr.dime.pixdim(2:4),origin,nii.hdr.dime.datatype);
-newnii=make_nii(new,nii.hdr.dime.pixdim(pixdim_order),origin,nii.hdr.dime.datatype);
+newnii=make_nii(new,new_pix_dims,origin,nii.hdr.dime.datatype);
 %newnii=make_nii(new,nii.hdr.dime.pixdim(2:4),[0 0 0],nii.hdr.dime.datatype);
 newnii.hdr.dime.intent_code=nii.hdr.dime.intent_code;
 save_nii(newnii,output_path);

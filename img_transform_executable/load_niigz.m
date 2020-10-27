@@ -23,6 +23,15 @@ end
 %% vector something something, What are we doing here? also, make all dims at least 1
 nii_vector_mode=0;
 nii_hdr.dime.dim(nii_hdr.dime.dim==0)=1;% some nifti programs set 0 on dimensions, that caues this math to break.
+
+extra_elements=8*(uint32(nii_hdr.dime.vox_offset)-352)/uint32(nii_hdr.dime.bitpix);
+if ( extra_elements > 0 )
+    warning('Extra data found, possibly additional metadata (xml, perhaps?). Converting to text and storing in nii.extra_data.');
+    nii_extra_data=nii_data(1:extra_elements);
+    nii_extra_data=char(typecast([nii_extra_data(1:end)],'uint8'));  
+    nii_data(1:extra_elements)=[];
+end
+
 if prod(nii_hdr.dime.dim(2:end)) < numel(nii_data)
     warning('dimensions state 3d, but we have more data than we should. Assuming vector/multi-channel volume.');
     n_dims=[numel(nii_data)/prod(nii_hdr.dime.dim(2:end)),nii_hdr.dime.dim(2:end)];
@@ -54,3 +63,7 @@ end
 %% set nii struct and return
 nii.hdr=nii_hdr;
 nii.img=nii_data;
+
+if ( extra_elements > 0 )
+    nii.extra_data=nii_extra_data;
+end

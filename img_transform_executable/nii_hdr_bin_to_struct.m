@@ -1,31 +1,36 @@
-function [hdr, machine] = nii_hdr_bin_to_struct(binary_header)
-%function [hdr, machine] = (binary_header)
+function [hdr, machine] = nii_hdr_bin_to_struct(binary_header,verbosity)
+%function [hdr, machine] = nii_hdr_bin_to_struct(binary_header)
+if ~exist('verbosity','var')
+    verbosity=1;
+end
 
 b=large_array;
 b.addprop('char_bin');
 b.char_bin=binary_header;
 
-
 if ~exist('binary_header','var')
-    error('Usage: [hdr, machine] = load_nii_hdr(binary_header)');
+    error(help(mfilename));
 end
 
 b.addprop('machine');
 b.machine='ieee-le';
 if typecast(b.char_bin(1:4),'int32') ~= 348
+    % cheesing the big/little endian check by testing header length
+    % this'll throw up and force big endian if we have any "extra" bits in
+    % the header, which is probably fine as we're strongly coded to plain
+    % header assumptions.
     %try opposing_endianness
     if typecast(b.char_bin(4:-1:1),'int32') ~= 348
-        
         %  Now throw an error
-        %
-        msg = sprintf('Data is corrupted.');
-        error(msg);
+        error('Data is corrupted.');
     else
-        warning('DONT KNOW HOW TO PROPERLY HANDLE OTHER ENDIANNESS!');
+        if verbosity
+            warning('DONT KNOW HOW TO PROPERLY HANDLE OTHER ENDIANNESS!');
+        end
     end
    b.machine = 'ieee-be'; 
 end
-hdr = read_header(b);
+hdr = read_header(b,verbosity);
 
 if strcmp(hdr.hist.magic, 'n+1')
     filetype = 2;
@@ -34,14 +39,13 @@ elseif strcmp(hdr.hist.magic, 'ni1')
 else
     filetype = 0;
 end
-machine=b.machine;
+hdr.endian=b.machine;
 % return					% load_nii_hdr
 end
 
 
 %---------------------------------------------------------------------
-function [ dsr ] = read_header(b)
-
+function [ dsr ] = read_header(b,verbosity)
         %  Original header structures
 	%  struct dsr
 	%       { 
@@ -52,7 +56,7 @@ function [ dsr ] = read_header(b)
 
     dsr.hk   = header_key(b);
     dsr.dime = image_dimension(b);
-    dsr.hist = data_history(b);
+    dsr.hist = data_history(b,verbosity);
     dsr.extension = eat(b,4,'uint8');
     %  For Analyze data format
     %
@@ -176,12 +180,11 @@ function [ dime ] = image_dimension(b)
     dime.toffset    = eat(b,1,'float32')';
     dime.glmax      = eat(b,1,'int32')';
     dime.glmin      = eat(b,1,'int32')';
-        
 %     return					% image_dimension
 end
 
 %---------------------------------------------------------------------
-function [ hist ] = data_history(b)
+function [ hist ] = data_history(b,verbosity)
         
 	%  Original header structures
 	%  struct data_history       
@@ -211,7 +214,9 @@ function [ hist ] = data_history(b)
 %     end
 
     hist.descrip     = deblank(eat(b,80,'char')');
-    warning('Originator is a BOGUS BOGUS BOGUS BOGUS field, invented by SPM');
+    if verbosity
+        warning('Originator is a BOGUS BOGUS BOGUS BOGUS field, invented by SPM');
+    end
 %     hist.originator  = typecast(b.char_bin(1:10),'int16');
     hist.originator  = zeros([5 1],'int16');
     hist.aux_file    = deblank(eat(b,24,'char')');
@@ -242,9 +247,11 @@ function val=eat(b,vals,type)
 % function val=eat(b,type,endian)
 % eats part of a uchar array to typecast them to other types.
 % simulates an fread on a filehandle.
-if strcmp(b.machine,'ieee-be')
-    warning('Big endian support not done!');
-end
+
+% Big endian ist tested enouugh we dont need a blab per thing anymore
+%if strcmp(b.machine,'ieee-be')
+%    warning('Big endian support not done!');
+%end
 % set up the number of chars to use per value
 switch type
     case {'int8', 'uint8','char','uchar'}
@@ -259,8 +266,6 @@ switch type
         error('eat for typecast not gonna work.');
 end
 nchars=chars_per_val*vals;
-
-
 % change the type to valid matlab typecast targets
 switch type
     case {'float32'}
@@ -270,8 +275,14 @@ switch type
 end
 if chars_per_val>1 % chars dont type cast
     val=typecast(b.char_bin(1:nchars),type);b.char_bin(1:nchars)=[];
+
+    [~,~,native_endian] = computer;
     if strcmp(b.machine,'ieee-be')
-        val=swapbytes(val);
+        if strcmp('L',native_endian)
+            val=swapbytes(val);
+        else
+            db_inplace(mfilename,'Endian not well understood by lazy programmer, I think in this context we don''t do anything? ');
+        end
     end
 else
     val=cast(b.char_bin(1:nchars),type);b.char_bin(1:nchars)=[];

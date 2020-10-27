@@ -1,4 +1,5 @@
 function kind_struct2array(data_buffer,test_code)
+% convert data field from a structure to a contiguous array
 oe=sort(fieldnames(data_buffer.data));
 count=0;
 for fn=1:numel(oe)
