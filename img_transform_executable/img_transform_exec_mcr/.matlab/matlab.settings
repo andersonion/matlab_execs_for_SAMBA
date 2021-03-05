@@ -109,15 +109,16 @@
             </key>
             <key name="History">
                 <string minArraySize="0" maxArraySize="500">
-                    <value><![CDATA[/home/rja20/cluster_code]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/shared/matlab_exec_lifecycle_manager]]></value>
+                    <value><![CDATA[/cm/shared/workstation_code_dev/shared]]></value>
                     <value><![CDATA[/home/rja20]]></value>
                     <value><![CDATA[/home]]></value>
                     <value><![CDATA[/]]></value>
                     <value><![CDATA[/cm]]></value>
-                    <value><![CDATA[/home/rja20/stable_img_transform_executable]]></value>
                     <value><![CDATA[/cm/shared]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev]]></value>
-                    <value><![CDATA[/cm/shared/workstation_code_dev/shared]]></value>
+                    <value><![CDATA[/home/rja20/cluster_code]]></value>
+                    <value><![CDATA[/home/rja20/stable_img_transform_executable]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs/img_transform_executable/20201025_2312]]></value>
                     <value><![CDATA[/home/rja20/matlab_execs/img_transform_executable]]></value>
@@ -128,7 +129,6 @@
                     <value><![CDATA[/home/rja20/backup_matlab_execs]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/matlab_execs/compare_group_stats_executable/20200219_0949]]></value>
                     <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe/surfstat]]></value>
-                    <value><![CDATA[/home/rja20/cluster_code/workstation_code/analysis/vbm_pipe]]></value>
                 </string>
             </key>
             <key name="HistorySize">
@@ -159,8 +159,8 @@
                     <string minArraySize="0" maxArraySize="100">
                         <value><![CDATA[icon]]></value>
                         <value><![CDATA[name]]></value>
-                        <value><![CDATA[status]]></value>
                         <value><![CDATA[size]]></value>
+                        <value><![CDATA[status]]></value>
                         <value><![CDATA[modified]]></value>
                         <value><![CDATA[__vertical_attribute:description]]></value>
                         <value><![CDATA[type]]></value>
@@ -169,10 +169,10 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[270]]></value>
-                        <value><![CDATA[51]]></value>
-                        <value><![CDATA[110]]></value>
-                        <value><![CDATA[134]]></value>
+                        <value><![CDATA[326]]></value>
+                        <value><![CDATA[56]]></value>
+                        <value><![CDATA[44]]></value>
+                        <value><![CDATA[105]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                     </string>
@@ -193,7 +193,7 @@
                 </key>
                 <key name="SortColumn">
                     <string>
-                        <value><![CDATA[name]]></value>
+                        <value><![CDATA[modified]]></value>
                     </string>
                 </key>
                 <key name="SortDescending">
@@ -206,6 +206,7 @@
                         <value><![CDATA[icon]]></value>
                         <value><![CDATA[name]]></value>
                         <value><![CDATA[size]]></value>
+                        <value><![CDATA[status]]></value>
                         <value><![CDATA[modified]]></value>
                     </string>
                 </key>
@@ -392,7 +393,7 @@
         </key>
         <key name="LastFolderPath">
             <string>
-                <value><![CDATA[/home/rja20/cluster_code]]></value>
+                <value><![CDATA[/cm/shared/workstation_code_dev/shared/matlab_exec_lifecycle_manager]]></value>
             </string>
         </key>
     </settings>

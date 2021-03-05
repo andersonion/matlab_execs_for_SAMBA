@@ -27,7 +27,7 @@ else
       args="${args} \"${token}\"" 
       shift
   done
-  cp -n ${exe_dir}/java.opts .
+  cp -n ${exe_dir}/*java.opts ./java.opts
   eval "\"${exe_dir}/img_transform_exec\"" $args
   ret_code=$?
 
