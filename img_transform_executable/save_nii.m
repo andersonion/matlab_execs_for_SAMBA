@@ -101,6 +101,11 @@ function save_nii(nii, fileprefix, old_RGB)
    %% write data
    % originally write_nii was not aware you wanted gzipping. That has been
    % adjusted so we can use gzip_write and write direct to gzip.
+   if filetype == 1
+      % Never tested this code, dont really indend to, Best of luck :D !
+      warning('Now why would we support this :p'); 
+      quit force;
+   end
    write_nii(nii, filetype, fileprefix, old_RGB, gzFile);
 
    %%  gzip output file if requested
@@ -111,7 +116,8 @@ function save_nii(nii, fileprefix, old_RGB)
 
    if filetype == 1
       % Never tested this code, dont really indend to, Best of luck :D !
-      error('Now why would we support this :p'); 
+      warning('Now why would we support this :p'); 
+      quit force;
       %  So earlier versions of SPM can also open it with correct originator
       %
       M=[[diag(nii.hdr.dime.pixdim(2:4)) -[nii.hdr.hist.originator(1:3).*nii.hdr.dime.pixdim(2:4)]'];[0 0 0 1]];

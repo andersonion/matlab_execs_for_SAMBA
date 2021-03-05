@@ -323,7 +323,7 @@ if ~strcmp(desired_vorder,current_vorder)
         %affine_matrix_string = [iam(xpos,:) iam(ypos,:) iam(zpos,:) 0 0 0];
         affine_fixed_string = [0 0 0];
         try
-            % sometims missing, dont care to track it down today.
+            % sometims missing, dont carev to track it down today.
             write_affine_xform_for_ants(affine_out,affine_matrix_string,affine_fixed_string);
         catch merr
             disp(merr);
@@ -347,8 +347,10 @@ end
 
 % 25 October 2020, BJA:
 % Code would break on anisotropic data and dimension swaps...fixing now
-pixdim_order=[(xpos+1) (ypos+1) (zpos+1)]; 
-new_pix_dims=nii.hdr.dime.pixdim(pixdim_order);
+if ~strcmp(desired_vorder,current_vorder)
+    pixdim_order=[(xpos+1) (ypos+1) (zpos+1)]; 
+    new_pix_dims=nii.hdr.dime.pixdim(pixdim_order);
+end
 
 %% make_nii/save_nii
 %newnii=make_nii(new,nii.hdr.dime.pixdim(2:4),origin,nii.hdr.dime.datatype);

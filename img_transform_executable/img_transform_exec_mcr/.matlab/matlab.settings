@@ -111,10 +111,10 @@
                 <string minArraySize="0" maxArraySize="500">
                     <value><![CDATA[/home/rja20/cluster_code]]></value>
                     <value><![CDATA[/home/rja20]]></value>
-                    <value><![CDATA[/home/rja20/stable_img_transform_executable]]></value>
                     <value><![CDATA[/home]]></value>
                     <value><![CDATA[/]]></value>
                     <value><![CDATA[/cm]]></value>
+                    <value><![CDATA[/home/rja20/stable_img_transform_executable]]></value>
                     <value><![CDATA[/cm/shared]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev]]></value>
                     <value><![CDATA[/cm/shared/workstation_code_dev/shared]]></value>
@@ -169,10 +169,10 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[294]]></value>
-                        <value><![CDATA[52]]></value>
-                        <value><![CDATA[107]]></value>
-                        <value><![CDATA[106]]></value>
+                        <value><![CDATA[270]]></value>
+                        <value><![CDATA[51]]></value>
+                        <value><![CDATA[110]]></value>
+                        <value><![CDATA[134]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                     </string>
