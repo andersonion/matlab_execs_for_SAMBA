@@ -350,6 +350,8 @@ end
 if ~strcmp(desired_vorder,current_vorder)
     pixdim_order=[(xpos+1) (ypos+1) (zpos+1)]; 
     new_pix_dims=nii.hdr.dime.pixdim(pixdim_order);
+else
+    new_pix_dims=nii.hdr.dime.pixdim(2:4);
 end
 
 %% make_nii/save_nii
