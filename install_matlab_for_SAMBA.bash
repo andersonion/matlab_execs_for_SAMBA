@@ -4,11 +4,11 @@ local_MATLAB=$2;
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )";
 
 if [[ xx == "x${package_dir}x" ]];then
-   package_dir=${SCRIPTPATH};
+   package_dir=${SCRIPTPATH}/MATLAB_package/;
 fi
 
 if [[ xx == "x${local_MATLAB}x" ]];then
-   local_MATLAB=${SCRIPTPATH};
+   local_MATLAB=${SCRIPTPATH}/../MATLAB2015b_runtime/;
 fi
 
 
@@ -38,6 +38,9 @@ ${package_dir}/temp/install -mode silent -agreeToLicense yes -destinationFolder 
 
 #
 # Check for success
+
 # cleanup temp folder
+rm -rf ${package_dir}
+
 #
 #
