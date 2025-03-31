@@ -27,7 +27,7 @@ else
       args="${args} \"${token}\"" 
       shift
   done
-  cp -n ${exe_dir}/java.opts .
+  cp -n ${exe_dir}/*java.opts ./java.opts
   eval "\"${exe_dir}/write_individual_stats_exec_v2\"" $args
   ret_code=$?
 
