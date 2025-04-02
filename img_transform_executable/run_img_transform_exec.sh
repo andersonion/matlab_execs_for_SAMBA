@@ -31,7 +31,7 @@ else
   eval "\"${exe_dir}/img_transform_exec\"" $args
   ret_code=$?
 
-  if [[ -e ./java.opts ]]; then rm ./java.opts ; fi
+  if [ -e ./java.opts ]; then rm ./java.opts ; fi
 
 fi
 exit ${ret_code}
